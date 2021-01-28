@@ -1,12 +1,15 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/albingeorge/go_algos/internal/router"
+	"github.com/gin-gonic/gin"
+)
 
 func main() {
-	router := gin.Default()
+	r := gin.Default()
 
-	router.LoadHTMLGlob("cmd/templates/*")
-	router.GET("/", func(c *gin.Context) {
+	r.LoadHTMLGlob("cmd/templates/*")
+	r.GET("/", func(c *gin.Context) {
 		c.HTML(
 			200,
 			"index.html",
@@ -15,5 +18,8 @@ func main() {
 			},
 		)
 	})
-	router.Run()
+
+	router.Init(r)
+
+	r.Run()
 }
