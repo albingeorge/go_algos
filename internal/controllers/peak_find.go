@@ -1,8 +1,10 @@
 package controllers
 
 import (
-	"fmt"
+	"strconv"
+	"strings"
 
+	"github.com/albingeorge/go_algos/internal/algos/mit_intro_to_algos/peakfinding"
 	"github.com/gin-gonic/gin"
 )
 
@@ -17,13 +19,23 @@ func PeakFind(c *gin.Context) {
 
 	inputValue := c.PostForm("input")
 
+	splitString := strings.Split(inputValue, ",")
+	var input []int
+
+	for _, s := range splitString {
+		inputString := strings.Trim(s, " ")
+		converted, _ := strconv.Atoi(inputString)
+		input = append(input, converted)
+	}
+
+	pos := peakfinding.Peakfind(input)
+
 	out := Ouput{
 		Input: inputValue,
 		Output: PeakFindOutput{
-			Index: 0,
-			Value: 2,
+			Index: pos,
+			Value: input[pos],
 		},
 	}
-	fmt.Println(out)
 	c.JSON(200, out)
 }
