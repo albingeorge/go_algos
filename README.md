@@ -8,4 +8,4 @@ This repo contains a set of algorithms implemented in golang
 
 `cd` to the directory
 
-`go test -run ''  -bench=. -v`
+`go test -run ''  -bench=. -v ./...`
