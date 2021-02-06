@@ -8,4 +8,5 @@ import (
 //Init .. router initialize
 func Init(r *gin.Engine) {
 	r.POST("/algos/peak-find", controllers.PeakFind)
+	r.POST("/algos/search", controllers.Search)
 }
