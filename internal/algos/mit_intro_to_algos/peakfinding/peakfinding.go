@@ -1,8 +1,6 @@
 package peakfinding
 
-import (
-	"errors"
-)
+import "errors"
 
 //Peakfind ...find the peak in a slice of ints
 func Peakfind(input []int) int {
