@@ -1,11 +1,11 @@
-package selection
+package bubble
 
 import "testing"
 
-func TestSelectionSort(t *testing.T) {
+func TestBubbleSort(t *testing.T) {
 	input := []int{4, 2, 1, 3, 5, 6}
 	expected := []int{1, 2, 3, 4, 5, 6}
-	result, _ := Selection(input)
+	result, _ := Bubble(input)
 
 	comp := true
 	if len(input) != len(expected) {
@@ -20,6 +20,6 @@ func TestSelectionSort(t *testing.T) {
 	}
 
 	if comp != true {
-		t.Errorf("Selection sorting failed, expected: %v; got: %v", expected, result)
+		t.Errorf("Bubble sorting failed, expected: %v; got: %v", expected, result)
 	}
 }
