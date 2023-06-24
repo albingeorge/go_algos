@@ -3,7 +3,6 @@ package minimumjumps
 import "testing"
 
 func TestMinimumJumps(t *testing.T) {
-
 	type test struct {
 		input    []int
 		expected int
